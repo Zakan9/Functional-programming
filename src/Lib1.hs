@@ -1,5 +1,6 @@
 module Lib1
     ( examples, Command(..), Dumpable(..)
+    , Car(..), Driver(..), Mechanic(..)
     ) where
 
 data Car = Car
