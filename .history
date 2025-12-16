@@ -1,3 +1,5 @@
+add_car Car "1" (Driver "Max Verstappen" "Netherlands" 26) [(Mechanic "John" 40)] [60, 58]
+add_car Car "44" (Driver "Lewis Hamilton" "UK" 38) [] [63, 64]
 filter_by_number "44"
 filter_by_number "44"
 add_mechanic "44" "Maria" 29

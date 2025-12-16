@@ -47,11 +47,30 @@ library
       QuickCheck
     , async
     , base >=4.7 && <5
+    , bytestring
     , deepseq
     , free
+    , http-conduit
     , random
     , stm
     , strict
+    , transformers
+  default-language: Haskell2010
+
+executable fp2025-client
+  main-is: Main.hs
+  other-modules:
+      Paths_fp2025
+  autogen-modules:
+      Paths_fp2025
+  hs-source-dirs:
+      app-client
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -rtsopts
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , fp2025
+    , http-conduit
     , transformers
   default-language: Haskell2010
 
@@ -68,6 +87,26 @@ executable fp2025-one
       base >=4.7 && <5
     , fp2025
     , repline
+  default-language: Haskell2010
+
+executable fp2025-server
+  main-is: Main.hs
+  other-modules:
+      Paths_fp2025
+  autogen-modules:
+      Paths_fp2025
+  hs-source-dirs:
+      app-server
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -rtsopts
+  build-depends:
+      async
+    , base >=4.7 && <5
+    , fp2025
+    , scotty
+    , stm
+    , text
+    , wai
+    , warp
   default-language: Haskell2010
 
 executable fp2025-three

@@ -1,0 +1,15 @@
+curl -X POST http://localhost:3000 -d 'add_car Car "44" (Driver "Lewis Hamilton" "UK" 38) [] [63, 64, 65]'
+
+curl -X POST http://localhost:3000 -d 'add_car Car "1" (Driver "Max Verstappen" "Netherlands" 26) [] [60, 58, 59]'
+
+curl -X POST http://localhost:3000 -d 'filter_by_number "44"'
+
+curl -X POST http://localhost:3000 -d 'add_mechanic "44" (Mechanic "James" "Engine")'
+
+curl -X POST http://localhost:3000 -d 'calculate_average_lap_time "44"'
+
+curl -X POST http://localhost:3000 -d 'dump_examples'
+
+curl -X POST http://localhost:3000 -d 'add_car Car "16" (Driver "Charles Leclerc" "Monaco" 27) [] [62, 63]; filter_by_number "16"'
+
+curl http://localhost:3000/state

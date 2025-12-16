@@ -44,6 +44,8 @@ library:
     - strict
     - transformers
     - async
+    - http-conduit
+    - bytestring
   when:
   - condition: false
     other-modules: Paths_fp2025
@@ -75,6 +77,29 @@ executables:
     - repline
     - stm
     - async
+  fp2025-server:
+    main:                Main.hs
+    source-dirs:         app-server
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - fp2025
+    - scotty
+    - stm
+    - async
+    - text
+    - wai
+    - warp
+  fp2025-client:
+    main:                Main.hs
+    source-dirs:         app-client
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - fp2025
+    - http-conduit
+    - bytestring
+    - transformers
 
 tests:
   fp2024-test:
